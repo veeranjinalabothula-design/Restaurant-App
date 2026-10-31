@@ -1,0 +1,72 @@
+
+.header {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.header-content {
+  min-height: 70px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.restaurant-name {
+  margin: 0;
+  font-size: 22px;
+  color: #1f2933;
+}
+
+.cart-container {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.my-orders {
+  display: none;
+  font-size: 14px;
+  color: #4b5563;
+}
+
+.cart-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  position: relative;
+  font-size: 20px;
+  padding: 4px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: #e11d48;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 768px) {
+  .header-content {
+    padding: 18px 40px;
+  }
+
+  .restaurant-name {
+    font-size: 26px;
+  }
+
+  .my-orders {
+    display: block;
+  }
+}
+
