@@ -1,7 +1,21 @@
-import Home from './Home'
+import {Switch, Route, Redirect} from 'react-router-dom'
+
+import CartProvider from './context/CartContext'
+import Login from './components/Login'
+import Home from './components/Home'
+import Cart from './components/Cart'
+import ProtectedRoute from './components/ProtectedRoute'
 import './App.css'
 
-// write your code here
-const App = () => <Home />
+const App = () => (
+  <CartProvider>
+    <Switch>
+      <Route exact path="/login" component={Login} />
+      <ProtectedRoute exact path="/" component={Home} />
+      <ProtectedRoute exact path="/cart" component={Cart} />
+      <Redirect to="/" />
+    </Switch>
+  </CartProvider>
+)
 
 export default App

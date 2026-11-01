@@ -1,0 +1,4 @@
+.home-container { padding: 24px; }
+.menu-categories-list { display: flex; gap: 16px; list-style: none; padding: 0; overflow-x: auto; }
+.category-button { background: transparent; border: none; font-weight: bold; cursor: pointer; }
+.dishes-list { list-style: none; padding: 0; }
