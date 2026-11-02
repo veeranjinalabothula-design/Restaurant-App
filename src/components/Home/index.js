@@ -29,7 +29,7 @@ class Home extends Component {
 
   getRestaurantDetails = async () => {
     const apiUrl =
-      'https://apis2.ccbp.in/restaurant-app/restaurant-menu-list-details'
+      'https://apis.ccbp.in/restaurant-app/restaurant-menu-list-details'
     const response = await fetch(apiUrl)
     const data = await response.json()
 
