@@ -70,7 +70,11 @@ const DishItem = props => {
                     <button
                       type="button"
                       className="add-to-cart-button"
-                      onClick={() => addCartItem(dishDetails)}
+                      onClick={() => {
+                        if (cartItem === undefined) {
+                          addCartItem(dishDetails)
+                        }
+                      }}
                     >
                       ADD TO CART
                     </button>

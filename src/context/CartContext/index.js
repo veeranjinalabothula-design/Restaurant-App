@@ -1,6 +1,13 @@
 import {Component, createContext} from 'react'
 
-export const CartContext = createContext(undefined)
+export const CartContext = createContext({
+  cartList: [],
+  addCartItem: () => {},
+  removeCartItem: () => {},
+  removeAllCartItems: () => {},
+  incrementCartItemQuantity: () => {},
+  decrementCartItemQuantity: () => {},
+})
 
 class CartProvider extends Component {
   state = {
@@ -14,13 +21,7 @@ class CartProvider extends Component {
       )
 
       if (isItemAlreadyExist) {
-        return {
-          cartList: prevState.cartList.map(eachItem =>
-            eachItem.dishId === dish.dishId
-              ? {...eachItem, quantity: eachItem.quantity + 1}
-              : eachItem,
-          ),
-        }
+        return {cartList: prevState.cartList}
       }
 
       return {

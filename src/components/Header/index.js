@@ -8,10 +8,7 @@ const Header = props => (
     {value => {
       const {cartList} = value
       const {history} = props
-      const cartCount = cartList.reduce(
-        (acc, eachItem) => acc + eachItem.quantity,
-        0,
-      )
+      const cartCount = cartList.length
 
       const onClickLogout = () => {
         Cookies.remove('jwt_token')
