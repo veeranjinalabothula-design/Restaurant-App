@@ -32,8 +32,9 @@ class Home extends Component {
       'https://apis2.ccbp.in/restaurant-app/restaurant-menu-list-details'
     const response = await fetch(apiUrl)
     const data = await response.json()
+    const restaurantDetails = Array.isArray(data) ? data[0] : data
 
-    const updatedData = data[0].table_menu_list.map(eachCategory => ({
+    const updatedData = restaurantDetails.table_menu_list.map(eachCategory => ({
       menuCategoryId: eachCategory.menu_category_id,
       menuCategory: eachCategory.menu_category,
       categoryDishes: eachCategory.category_dishes.map(eachDish =>
@@ -43,7 +44,7 @@ class Home extends Component {
 
     this.setState({
       isLoading: false,
-      restaurantName: data[0].restaurant_name,
+      restaurantName: restaurantDetails.restaurant_name,
       menuCategories: updatedData,
       activeMenuCategoryId: updatedData[0].menuCategoryId,
     })
